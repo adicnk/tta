@@ -1,2 +1,2 @@
-#TTA
 Taurus Trading Academy
+#=====================

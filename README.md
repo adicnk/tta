@@ -1,2 +1,1 @@
 Taurus Trading Academy
-#=====================

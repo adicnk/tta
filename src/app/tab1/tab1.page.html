@@ -26,12 +26,37 @@
     <h6 ion-text color="secondary" >Caption Information</h6>
   </div>
   
-
   <!-- <app-explore-container name="Chart"></app-explore-container> -->
 </ion-content>
 
 <ion-footer>
   <ion-toolbar>
-    <ion-title style="text-align: center"><h6 ion-text color="secondary">Taurus Trading Academy</h6></ion-title>
+    <ion-grid >
+      <ion-row style="text-align: center">
+          <ion-col>
+            <ion-item>          
+            <ion-input placeholder="Kode"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Select Timeframe
+            </div>
+            <select>
+              <option>--------------------</option>
+              <option>Daily</option>
+              <option>Weekly</option>
+              <option>Montly</option>
+            </select>
+          </label>
+        </ion-col>
+        <ion-col>
+          <button class = "button button-full">
+            Show
+         </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-footer>

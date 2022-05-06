@@ -20,9 +20,18 @@
           <ion-select-option value="m">Male</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-item>
-        <ion-label>Birthday</ion-label>
-        <ion-datetime displayformat="YYYY-MM-DD" min="1900-01-01" max="2045-01-01" value="2020-01-01T12:00"></ion-datetime>
+      <ion-item button="true" id="open-date-input">
+        <ion-label>Date of Birthday</ion-label>
+        <ion-text slot="end">{{ dateValue }}</ion-text>
+        <ion-popover trigger="open-date-input" show-backdrop="false">
+          <ng-template>
+            <ion-datetime
+              #popoverDatetime
+              presentation="date"
+              (ionChange)="dateValue = formatDate(popoverDatetime.value)"
+            ></ion-datetime>
+          </ng-template>
+        </ion-popover>
       </ion-item>
       <ion-item>
         <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>

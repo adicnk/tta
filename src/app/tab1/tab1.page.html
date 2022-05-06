@@ -39,22 +39,19 @@
           </ion-item>
         </ion-col>
         <ion-col>
-          <label class="item item-input item-select">
-            <div class="input-label">
-              Select Timeframe
-            </div>
-            <select>
-              <option>--------------------</option>
-              <option>Daily</option>
-              <option>Weekly</option>
-              <option>Montly</option>
-            </select>
-          </label>
+          <ion-item>            
+            <ion-label>Timeframe</ion-label>
+            <ion-select placehoder="Timeframe">
+              <ion-select-option value="d">Daily</ion-select-option>
+              <ion-select-option value="w">Weekly</ion-select-option>
+              <ion-select-option value="m">Montly</ion-select-option>
+            </ion-select>
+          </ion-item>
         </ion-col>
         <ion-col>
-          <button class = "button button-block">
-            Show
-         </button>
+          <ion-item>            
+            <ion-button expand="full" class="no-padding" color="primary" (click)="tryShow()">Show</ion-button>   
+          </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>

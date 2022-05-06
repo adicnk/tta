@@ -16,6 +16,6 @@ export class LoginPage implements OnInit {
   }
 
   openRegister(){
-    this.router.navigate(['/home']);
+    this.router.navigate(['/register']);
   }
 }

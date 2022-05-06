@@ -25,15 +25,15 @@
         <div class="ion-text-end">          
           <ion-input [value]="dateValue" [(ngModel)]="dob"></ion-input>
         </div>        
-        <ion-button slot="end" fill="clear" id="open-date-input-2">
+        <ion-button slot="end" fill="clear" id="open-date-input">
           <ion-icon icon="calendar"></ion-icon>
         </ion-button>
-        <ion-popover trigger="open-date-input-2" show-backdrop="false">
+        <ion-popover trigger="open-date-input" show-backdrop="false">
           <ng-template>
             <ion-datetime
-              #popoverDatetime2
+              #popoverDatetime
               presentation="date"
-              (ionChange)="dateValue = formatDate(popoverDatetime2.value)"
+              (ionChange)="dateValue = formatDate(popoverDatetime.value)"
             ></ion-datetime>
           </ng-template>
         </ion-popover>

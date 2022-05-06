@@ -20,19 +20,24 @@
           <ion-select-option value="m">Male</ion-select-option>
         </ion-select>
       </ion-item>      
-      <ion-item button="true" id="open-date-input">
+      <ion-item>
         <ion-label>Date of Birthday</ion-label>
-        <ion-input slot="end" [(ngModel)]="dob" [value]="dateValue"></ion-input>
-        <ion-popover trigger="open-date-input" show-backdrop="false">
+        <div class="ion-text-end">          
+          <ion-input [value]="dateValue" [(ngModel)]="dob"></ion-input>
+        </div>        
+        <ion-button slot="end" fill="clear" id="open-date-input-2">
+          <ion-icon icon="calendar"></ion-icon>
+        </ion-button>
+        <ion-popover trigger="open-date-input-2" show-backdrop="false">
           <ng-template>
             <ion-datetime
-              #popoverDatetime
+              #popoverDatetime2
               presentation="date"
-              (ionChange)="dateValue = formatDate(popoverDatetime.value)"
+              (ionChange)="dateValue = formatDate(popoverDatetime2.value)"
             ></ion-datetime>
           </ng-template>
         </ion-popover>
-      </ion-item>         
+      </ion-item>       
       <ion-item>
         <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
       </ion-item>

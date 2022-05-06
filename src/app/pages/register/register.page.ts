@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
-import { IonDatetime } from '@ionic/angular';
 import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
 
 @Component({
@@ -8,10 +7,7 @@ import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {  
-
-  @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
-
+export class RegisterPage implements OnInit {
   
   name : string = "";
   gender : string = "";
@@ -24,14 +20,6 @@ export class RegisterPage implements OnInit {
   ) { }
 
   ngOnInit() {
-  }
-
-  confirm() {
-    this.datetime.confirm();
-  }
-
-  reset(){
-    this.datetime.reset();
   }
 
   formatDate(value: string) {

@@ -6,12 +6,15 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
-    </ion-item>
-    <ion-item>      
-      <ion-input type="text" placeholder="Password" [(ngModel)]="password"></ion-input>
-    </ion-item>
-    <ion-button expand="full" class="no-padding" color="success">Login</ion-button>
+    <div class="">
+      <ion-item>
+        <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+      </ion-item>
+      <ion-item>      
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-button expand="full" class="no-padding" color="success" (click)="tryLogin()">Login</ion-button>
+      <p class="ion-padding info1">If you don't have an account, click <span (click)="openRegister()">Register Now</span></p>
+    </div>
   </ion-list>
 </ion-content>

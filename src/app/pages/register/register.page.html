@@ -15,10 +15,14 @@
       </ion-item>
       <ion-item>
         <ion-label>Gender</ion-label>
-        <ion-select placeholder="Select One">
+        <ion-select interface="popover" [(ngModel)]="gender">
           <ion-select-option value="f">Female</ion-select-option>
           <ion-select-option value="m">Male</ion-select-option>
         </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Birthday</ion-label>
+        <ion-datetime displayformat="YYYY-MM-DD" min="1900-01-01" max="2045-01-01" value="2020-01-01T12:00"></ion-datetime>
       </ion-item>
       <ion-item>
         <ion-input type="text" placeholder="Username" [(ngModel)]="username"></ion-input>

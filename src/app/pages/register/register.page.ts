@@ -31,6 +31,35 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
+  tryRegister(){
+    if (this.name=""){
+      this.presentToast('Name is required');
+    } else if (this.gender="") {
+      this.presentToast('Gender is required');
+    } else if (this.dob=""){
+      this.presentToast('Birthday is required');
+    } else if (this.username=""){
+      this.presentToast('username is required');
+    } else if (this.password=""){
+      this.presentToast('password is required')
+    } else {
+      this.presentToast('confirm password is required')
+    }
+  }
+
+  async presentToast(a){
+    let toast = await this.toastCtrl.create({
+      message: a,
+      duration: 1500,
+      position : 'top'
+    });
+    return await toast.present()
+  }
+
+  ionViewDidEnter(){
+    this.disabledButton=false;
+  }
+
   formatDate(value: string) {
     return format(parseISO(value), 'dd/MM/yyyy');
   }

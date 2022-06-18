@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { Clients, ClientService } from 'src/app/services/client.service';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -8,11 +10,17 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class LoginPage implements OnInit {
 
+  clients: Clients[];
+
   constructor(
-    private router:Router
+    private router:Router,
+    private service: ClientService
   ) { }
 
   ngOnInit() {
+    this.service.get('180387391').subscribe(response=>{
+      this.clients = response;
+    });
   }
 
   openRegister(){

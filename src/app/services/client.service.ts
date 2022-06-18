@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { id } from 'date-fns/locale';
 
 export interface Clients {
   id: string;
@@ -25,23 +26,23 @@ export class ClientService {
     
   }
 
-  gettAll(){
-
-  }
+  getAll(){
+    return this.http.get<[Clients]>(this.url);
+  } 
 
   get(id: string){
-
+    return this.http.get<[Clients]>(this.url + '/' + id);
   }
-
+  
   create(clients : Clients){
-
+    return this.http.post(this.url, clients);
   }
-
+  
   update(clients : Clients, id : string){
-
+    return this.http.put(this.url + '/' + id, clients);    
   }
 
-  delete(id : string) {
-    
+  remove(id : string) {
+    return this.http.delete(this.url + '/' + id);
   }
 }

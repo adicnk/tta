@@ -32,7 +32,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
-    echo "PUT";
+    if (isset($_GET['id'])) {
+        $id = $conn->real_escape_string($_GET['id']);
+        $data = json_decode(file_get_contents("php://input"));
+        $sql = $conn->query("UPDATE bot_register SET user_id = '".$data->user_id."',
+            first_name = '".$data->first_name."', last_name = '".$data->last_name."' WHERE id = '$id'");
+        if ($sql) {
+            exit(json_encode(array('status'=>'success')));
+        } else {
+            exit(json_encode(array('status'=>'error')));
+        }
+    }
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {

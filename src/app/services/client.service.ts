@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { id } from 'date-fns/locale';
 
 export interface Clients {
   id: string;

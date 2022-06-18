@@ -46,7 +46,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'PUT') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'DELETE') {
-    echo "DELETE";
+    if (isset($_GET['id'])) {
+        $id = $conn->real_escape_string($_GET['id']);
+        echo $id;
+        $sql = $conn->query("DELETE FROM bot_register WHERE id = '$id'");
+        if ($sql) {
+            exit(json_encode(array('status'=>'success')));
+        } else {
+            exit(json_encode(array('status'=>'error')));
+        }
+    }
 }
 
 

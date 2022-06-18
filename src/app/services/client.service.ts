@@ -37,7 +37,11 @@ export class ClientService {
 
   }
 
-  update(clients : Clients, id: string){
+  update(clients : Clients, id : string){
+
+  }
+
+  delete(id : string) {
     
   }
 }

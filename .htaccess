@@ -1,0 +1,3 @@
+RewriteEngine on
+RewriteRule ^api/clients/?$ api/app.php
+RewriteRule ^api/clients/([0-9]+)?$ app.php?id=$1

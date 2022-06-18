@@ -6,25 +6,25 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" *ngIf="clients">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Info</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+
   <ion-item-divider>
     <ion-icon name="person"></ion-icon><h3 ion-text color="secondary">&nbsp;Basic Information</h3>
   </ion-item-divider>
   <ion-item>
-    <span>Name : </span>
+    <span>Name : {{clients.first_name}}</span>
   </ion-item>
   <ion-item>
-    <ion-label>HP : </ion-label>
+    <ion-label>HP : {{clients.hp}}</ion-label>
     <ion-input></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>Email : </ion-label>
+    <ion-label>Email : {{clients.email}}</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
@@ -32,7 +32,7 @@
     <ion-icon name="log-in-outline"></ion-icon><h3 ion-text color="secondary">&nbsp;Login Information</h3>
   </ion-item-divider>
   <ion-item>
-    <ion-label>Username : </ion-label>
+    <ion-label>Username : {{clients.username}}</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
@@ -60,7 +60,7 @@
     <ion-input></ion-input>
   </ion-item>
   <ion-item>
-    <ion-label>User ID : </ion-label>
+    <ion-label>User ID : {{clients.user_id}}</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
@@ -68,7 +68,7 @@
     <ion-icon name="calendar"></ion-icon><h3 ion-text color="secondary">&nbsp;Join Information</h3>
   </ion-item-divider>
   <ion-item>
-    <ion-label>Date : </ion-label>
+    <ion-label>Date : {{clients.join_date}}</ion-label>
     <ion-input></ion-input>
   </ion-item>
 

@@ -8,6 +8,8 @@ export interface Clients {
   chat_id: string;
   first_name: string;
   last_name: string;
+  hp: string;
+  email: string;
   username: string;
   status: string;
   counter: string;

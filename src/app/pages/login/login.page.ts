@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Clients, ClientService } from 'src/app/services/client.service';
+import { Login, LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -10,16 +10,16 @@ import { Clients, ClientService } from 'src/app/services/client.service';
 })
 export class LoginPage implements OnInit {
 
-  clients: Clients[];
+  login: Login[];
 
   constructor(
     private router:Router,
-    private service: ClientService
+    private service: LoginService
   ) { }
 
   ngOnInit() {
-    this.service.get('180387391').subscribe(response=>{
-      this.clients = response;
+    this.service.get('jefendi@gmail.com').subscribe(response=>{
+      console.log(response);
     });
   }
 

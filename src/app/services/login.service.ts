@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 
 export interface Login {
   id: string;
+  email: string;
 }
 
 @Injectable({

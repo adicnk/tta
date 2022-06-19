@@ -7,7 +7,7 @@ $conn = new mysqli('localhost', 'root','','taurustr_apps');
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (isset($_GET['id'])) {
         $id = $conn->real_escape_string($_GET['id']);
-        $sql = $conn->query("SELECT id FROM bot_clients WHERE email = '$id'");
+        $sql = $conn->query("SELECT id,password FROM bot_clients WHERE email = '$id'");
         $data = $sql->fetch_assoc();
     } else {
         $data = array();

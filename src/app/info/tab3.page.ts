@@ -22,7 +22,6 @@ export class Tab3Page implements OnInit {
       this.id = res['id'];
       this.service.get(this.id).subscribe(response=>{
         this.clients = response;
-        console.log(this.clients);
       });
     });
   }

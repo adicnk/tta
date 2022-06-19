@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { NavController, ToastController } from '@ionic/angular';
 import { Login, LoginService } from 'src/app/services/login.service';
 import { Storage } from '@ionic/storage-angular';

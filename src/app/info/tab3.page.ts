@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Storage } from '@ionic/storage-angular';
 
 import { Clients, ClientService } from '../services/client.service';
 
@@ -11,13 +12,22 @@ import { Clients, ClientService } from '../services/client.service';
 export class Tab3Page implements OnInit {
 
   clients: Clients[];
+  id: any;
 
-  constructor(private service: ClientService) {}
+  constructor(
+    private service: ClientService,
+    private storage: Storage
+  ) {
+    this.storage.get('storage_xxx').then((res)=>{
+      this.id = res['id'];
+      this.service.get(this.id).subscribe(response=>{
+        this.clients = response;
+        console.log(this.clients);
+      });
+    });
+  }
 
   ngOnInit(){
-    this.service.get('180387391').subscribe(response=>{
-      this.clients = response;
-    });
   }
 
 }

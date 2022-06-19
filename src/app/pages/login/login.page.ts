@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { ToastController } from '@ionic/angular';
-import { promise } from 'protractor';
+import { NavController, ToastController } from '@ionic/angular';
 import { Login, LoginService } from 'src/app/services/login.service';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-login',
@@ -18,8 +18,10 @@ export class LoginPage implements OnInit {
 
   constructor(
     private router:Router,
+    private navCtrl : NavController,
     private toastCtrl : ToastController,
-    private service: LoginService
+    private service: LoginService,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
@@ -32,7 +34,11 @@ export class LoginPage implements OnInit {
   tryLogin(){
 
       this.service.get(this.username).subscribe(res=>{
-        if (this.password == res['password']){          
+        if (this.password == res['password']){ 
+          this.storage.set('storage_xxx',res);         
+          //this.navCtrl.navigateForward(['home',{
+          //  data : JSON.stringify(computer)
+          //}]);
           this.router.navigate(['/home']);
         }
       });

@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { Storage } from '@ionic/storage-angular';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tabs',
@@ -8,7 +11,13 @@ import { Component } from '@angular/core';
 
 export class TabsPage {
 
-  constructor() {}
+  constructor(
+    private navCtrl : NavController,
+    private route : ActivatedRoute,
+    private storage: Storage
+  ) {
+    
+  }
 
 
 }

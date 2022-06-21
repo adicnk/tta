@@ -18,7 +18,7 @@ export class Tab3Page implements OnInit {
     private service: ClientService,
     private storage: Storage
   ) {
-    this.storage.get('storage_xxx').then((res)=>{
+    this.storage.get('sClient').then((res)=>{
       this.id = res['id'];
       this.service.get(this.id).subscribe(response=>{
         this.clients = response;

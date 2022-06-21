@@ -22,7 +22,14 @@ export class LoginPage implements OnInit {
     private toastCtrl : ToastController,
     private service: LoginService,
     private storage: Storage
-  ) { }
+  ) { 
+    this.service.get('').subscribe(res=>{
+      if (res){ 
+        this.storage.set('sClient',res);         
+        
+      }
+    });
+  }
 
   ngOnInit() {
   }
@@ -35,7 +42,7 @@ export class LoginPage implements OnInit {
 
       this.service.get(this.username).subscribe(res=>{
         if (this.password == res['password']){ 
-          this.storage.set('storage_xxx',res);         
+          this.storage.set('sClient',res);         
           //this.navCtrl.navigateForward(['home',{
           //  data : JSON.stringify(computer)
           //}]);

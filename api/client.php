@@ -21,8 +21,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents("php://input"));
-    $sql = $conn->query("INSERT INTO bot_register (user_id,first_name,last_name) VALUES ('".$data->user_id."',
-        '".$data->first_name."','".$data->last_name."')");
+    $sql = $conn->query("INSERT INTO bot_client (user_id,first_name,last_name,hp,email,username,password,gender,dob) 
+        VALUES ('".$data->user_id."','".$data->first_name."','".$data->last_name."','".$data->hp."','".$data->email
+        ."','".$data->username."','".$data->password."','".$data->gender."','".$data->dob."')");
     if ($sql) {
         $data->id=$conn->insert_id;
         exit(json_encode($data));

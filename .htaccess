@@ -3,3 +3,5 @@ RewriteRule ^api/clients/?$ api/client.php
 RewriteRule ^api/clients/([0-9]+)?$ api/client.php?id=$1
 
 RewriteRule ^api/login/(.*)?$ api/login.php?id=$1
+
+RewriteRule ^api/register/(.*)?$ api/register.php?email=$1
